@@ -4,7 +4,7 @@ summary and context: lists comprehensions are a concise way to create lists; alt
 use of for loops over an iterable and also using the map() function
 reference-1: "9 Things to know to master list comprehensions in Python" by Yong Cui in Better Programming
 reference-2: "When to use a list comprehension in Python" by James Timmins (realpython.com)
-so what? can use list comprehensions to create powerful functionality within a single line of code; they can be
+so what? We can use list comprehensions to create powerful functionality within a single line of code; they can be
 used too much, though (making code harder to read)
 further reading/links: search realpython.com and Medium app
 dependencies: Python3
@@ -12,7 +12,7 @@ github: piettoon_koud_master
 
 """
 
-#First thing: 
+#First thing 
 # list comprehensions has the form [expression for item in iterable]
 #expanded form is ... for item in iterable:
 #                         expression
