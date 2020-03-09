@@ -6,8 +6,10 @@ reference-1: "9 Things to know to master list comprehensions in Python" by Yong 
 reference-2: "When to use a list comprehension in Python" by James Timmins (realpython.com)
 so what? can use list comprehensions to create powerful functionality within a single line of code; they can be
 used too much, though (making code harder to read)
-further reading/links: search realpython.com and  
+further reading/links: search realpython.com and Medium app
+dependencies: Python3
 github: piettoon_koud_master
+
 """
 
 #First thing: 
