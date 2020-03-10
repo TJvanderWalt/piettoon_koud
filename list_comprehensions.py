@@ -7,7 +7,7 @@ reference-2: "When to use a list comprehension in Python" by James Timmins (real
 so what? We can use list comprehensions to create powerful functionality within a single line of code; they can be
 used too much, though (making code harder to read)
 further reading/links: search realpython.com and Medium app
-dependencies: Python3
+dependencies: Python3.8 for walrus operator in seventh thing; 
 github: piettoon_koud_master
 
 """
@@ -45,7 +45,7 @@ print(squared_primes)
 
 #for a more complicated evaluation of condition, one can even use a function
 def has_four_legs(pet):
-    return pet in ("pig", "dog", "turtle", "hamster", "cat") #equivalent to ... if pet in tuple:  return pet
+    return pet in ("pig", "dog", "turtle", "hamster", "cat") #equivalent to ... if pet in tuple:  return True
 four_legs_pets = [pet.capitalize() for pet in pets if has_four_legs(pet)]
 print(four_legs_pets)
 
@@ -63,7 +63,9 @@ print(ceiling_numbers)
 print("")
 
 #Fifth thing: replace map() function, when used to create a lsit, by the list comprehension
-#see reference1 for more
+#you pass in a function and an iterable, and map() will create an object. This object contains
+#the output you would get from running each elelment in the iterable through the supplied function
+#This object is then easily converted into a list by using list()
 
 #Sixth thing: nested list comprehension
 #expanded form
@@ -84,7 +86,10 @@ print("")
 #see reference1 for more
 
 #Eighth thing: set comprehension
-#use curly braces instead of square brackets; sets (unlike lists) wont have duplicate elements
+#use curly braces instead of square brackets; set comprehensions 
+#(unlike list comprehensions) make sure the output contains no 
+#duplicate elements; unlike lists, sets don't guarantee that items will
+#be saved in any particular order
 # syntax for set comprehension
 # {expression for item in iterable} 
 numbers = (1, 34, 5, 8, 10, 12, 3, 90, 70, 70, 90)
