@@ -29,10 +29,10 @@ DONE:
         pseudocode: IF condition THEN ELSE ENDIF  python: if condition: [tab] else: [tab]
 
 TO DO:
-    add more examples to the identifier table (Philip)
-    code example for using the pretty print function (Philip)
-    correct line 79 to exactly re-produce the output of line 76 by making use of a fstring (Philip)
-    Ch11 Exam-Style-Questions : Write Python code for Question 1 : Modulo 11 check digit (Philip)
+    add more examples to the identifier table (Philip) DONE
+    code example for using the pretty print function (Philip) DONE
+    correct line 79 to exactly re-produce the output of line 76 by making use of a fstring (Philip) DONE
+    Ch11 Exam-Style-Questions : Write Python code for Question 1 : Modulo 11 check digit (Philip) DONE
 """
 
 print("Read and understand the statements/syntax in the next lines of Python code \nand compare with the terminal \
@@ -58,7 +58,12 @@ print("next_number                     | the next number to be input")
 print("running_total                   | sum of all numbers input so far")
 print("average                         | calculated result from dividing running_total by counter")
 print("biggest_so_far                  | stores the biggest number input so far")
+print("index                           | stores current index of a list,array,tuple or dictionary that is currently possessed")
+print("i                               | Counter for outer loop")
+print("j                               | Counter for inner loop")
+print("temp                            | variable for temporary storage while swapping values")
 print("")
+
 
 print('pseudocode: \n\tINPUT "Prompt: " A')
 print('pythoncode: \n\t>>>user_name = input("Please enter your username")')
@@ -76,7 +81,7 @@ print('\t>>>print("Your name is " + user_name + " and you are " + str(your_age) 
 print("\tYour name is " + user_name + " and you are " + str(your_age) + " years old")
 #in string concatenation you need to insert the spaces yourself and number types need to be converted to string types
 #next, a so-called fstring will be used in the print()
-#print('\tfYour name is {user_name} and you are {your_age} years old')
+print(f'\tYour name is {user_name} and you are {your_age} years old')
 print("")
 
 print("My name is John")
@@ -113,11 +118,34 @@ else:
     print("\tA and B are equal")
 print("")
 
-
 #complex conditions can be formed by "joining" two or more simple conditions with AND, OR and NOT
 #(called logic operators). Furthermore, one IF statement can contain another IF statement 
 #(referred to as nested IF statements). Similarly, nested REPEAT statements are possible
 #More about this in Part3
+
+print("""Pretty printing is a built in python library that allows you to customize output in the console.\nTherefore \
+it is required to "import pprint". \n\n pprint can be used in two different ways: \n\t 1. pprint.pprint() \t\t\t this is a temorary way and does not store parameters that are customized and is useful for once off usage \
+\n\t 2. pp = pprint.PrettyPrinter() \t this method stores changed parameters and is useful for when you want to apply it multiple times\n""")
+
+print(">>>import pprint\n>>>list_in_list = [[1,2,3],[1,2,3],[1,2,3]]")
+import pprint
+list_in_list = [[1,2,3],[1,2,3],[1,2,3]]
+print("Here is the normal list printed out:")
+print(list_in_list)
+print("")
+
+print(">>>pprint.pprint(list_in_list, width=20)")
+print("Here is the list printed using pprint.print with width set to 20 (meaning that after 20 characters a new line is created):")
+pprint.pprint(list_in_list, width=20)
+
+print(">>>pp = pprint.PrettyPrinter(width=20, indent=3")
+print(">>>pp.pprint(list_in_list")
+print("""Here width=20 and indent=2 was used. the parameters are now stored into "pp" which can be re-used by using "pp.pprint()""")
+pp = pprint.PrettyPrinter(width=20, indent=3)
+pp.pprint(list_in_list)
+print("")
+print("Other parameters include: \n\t depth(None) \tnumber of nested data types displayed \n\t compact(False) \tWhen true puts as many complex data structures into lines as possible \n\t stream(None) \tused when pretty printing a file")
+print("")
 
 #**************  PYTHON CODING EXERCISES in IDLE by PHILIP ****************************
 # Ch 11 of the Coursebook, Exam-Style Questions
@@ -128,3 +156,40 @@ print("")
 # Calculate the result of (11 - previous result)
 # assign this result to the check digit, unless the result is equal to 10, in which case the value X 
 # is assigned to the check digit; or the result is equal to 11, in which case 0 is assigned to the check digit
+
+#Ch 11 Q1:
+
+def check_digit(): #function to find the check digit from 9 numbers
+
+    print("this piece of code will find the Check Digit from 9 numbers (Chaper 11 AS Coursework)")
+
+    digit = []
+    weighting = 10
+    count = 1
+    total = 0
+
+    for i in range(1,10):
+        num = int(input("Please enter a number and press enter (9 TIMES): "))
+        digit.append(num)
+    print(digit)
+
+    for i in range(1,9):
+        value = digit[i] * weighting
+        weighting -= 1
+        count += 1
+        total = total + value
+
+    remainder = total % 11
+    checkDigit = 11 - remainder
+
+    if checkDigit == 10:
+        checkDigit = "X"
+        print(f"The Check digit is {checkDigit}")
+    elif checkDigit == 11:
+        checkDigit = 0
+        print(f"The Check digit is {checkDigit}")
+    else:
+        print(f"The Check digit is {checkDigit}")
+    print("Done.")
+
+check_digit() 
