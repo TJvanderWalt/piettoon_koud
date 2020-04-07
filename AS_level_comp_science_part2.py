@@ -123,8 +123,8 @@ print("")
 #(referred to as nested IF statements). Similarly, nested REPEAT statements are possible
 #More about this in Part3
 
-print("""Pretty printing is a built in python library that allows you to customize output in the console.\nTherefore \
-it is required to "import pprint". \n\n pprint can be used in two different ways: \n\t 1. pprint.pprint() \t\t\t this is a temorary way and does not store parameters that are customized and is useful for once off usage \
+print("""Pretty printing is a built-in python library that allows you to customize output in the console.\nTherefore \
+it is required to "import pprint". \n\npprint can be used in two different ways: \n\t 1. pprint.pprint() \t\t\t this is a temporary way and does not store parameters that are customized and is useful for once off usage \
 \n\t 2. pp = pprint.PrettyPrinter() \t this method stores changed parameters and is useful for when you want to apply it multiple times\n""")
 
 print(">>>import pprint\n>>>list_in_list = [[1,2,3],[1,2,3],[1,2,3]]")
@@ -135,16 +135,17 @@ print(list_in_list)
 print("")
 
 print(">>>pprint.pprint(list_in_list, width=20)")
-print("Here is the list printed using pprint.print with width set to 20 (meaning that after 20 characters a new line is created):")
+print("Here is the list printed using pprint.pprint with width set to 20 (meaning that after 20 characters a new line is created):")
 pprint.pprint(list_in_list, width=20)
 
-print(">>>pp = pprint.PrettyPrinter(width=20, indent=3")
-print(">>>pp.pprint(list_in_list")
-print("""Here width=20 and indent=2 was used. the parameters are now stored into "pp" which can be re-used by using "pp.pprint()""")
+print(">>>pp = pprint.PrettyPrinter(width=20, indent=3)")
+print(">>>pp.pprint(list_in_list)")
+print("""Here width=20 and indent=3 was used. The parameters are now stored into "pp" which can be re-used by using "pp.pprint()""")
 pp = pprint.PrettyPrinter(width=20, indent=3)
 pp.pprint(list_in_list)
 print("")
-print("Other parameters include: \n\t depth(None) \tnumber of nested data types displayed \n\t compact(False) \tWhen true puts as many complex data structures into lines as possible \n\t stream(None) \tused when pretty printing a file")
+print("Other parameters include: \n\t depth(None) \t\tnumber of nested data types displayed \n\t compact(False) \tWhen true puts as \
+many complex data structures into lines as possible \n\t stream(None) \t\tused when pretty printing to a file")
 print("")
 
 #**************  PYTHON CODING EXERCISES in IDLE by PHILIP ****************************
@@ -159,37 +160,31 @@ print("")
 
 #Ch 11 Q1:
 
-def check_digit(): #function to find the check digit from 9 numbers
-
-    print("this piece of code will find the Check Digit from 9 numbers (Chaper 11 AS Coursework)")
-
-    digit = []
-    weighting = 10
-    count = 1
+def check_digit(): 
+    """this piece of code will find the Check Digit for a 9-digit number (Chaper 11 AS Coursework)"""
+    number = []
+    weight = 10
     total = 0
 
-    for i in range(1,10):
-        num = int(input("Please enter a number and press enter (9 TIMES): "))
-        digit.append(num)
-    print(digit)
+    for _ in range(1, 10): # underscore indicates unused variable
+        next_digit = int(input("Please enter the next digit: "))
+        number.append(next_digit)
+        total = total + next_digit*weight
+        weight -= 1
 
-    for i in range(1,9):
-        value = digit[i] * weighting
-        weighting -= 1
-        count += 1
-        total = total + value
+    remainder = total%11
+    check_d = 11 - remainder
 
-    remainder = total % 11
-    checkDigit = 11 - remainder
-
-    if checkDigit == 10:
-        checkDigit = "X"
-        print(f"The Check digit is {checkDigit}")
-    elif checkDigit == 11:
-        checkDigit = 0
-        print(f"The Check digit is {checkDigit}")
+    if check_d == 10:
+        check_d = "X"
+        print(f"The check digit is {check_d}")
+    elif check_d == 11:
+        check_d = 0
+        print(f"The check digit is {check_d}")
     else:
-        print(f"The Check digit is {checkDigit}")
-    print("Done.")
+        print(f"The check digit is {check_d}")
+    
+    number.append(check_d)
+    print(f"9-digit number + check digit = {number}")
 
-check_digit() 
+check_digit() #number 987654321 should have a check digit = 0
