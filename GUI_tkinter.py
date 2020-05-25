@@ -8,7 +8,7 @@ topics:
     Frame;
     checkboxes, radio buttons, scroll bars, progress bars 
     events;
-    positioning (geometry manager)
+    positioning (geometry managers)
 reference1: 
     "Python GUI programming with Tkinter" (realpython.com)
 reference2:
