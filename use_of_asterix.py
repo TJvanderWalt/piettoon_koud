@@ -17,7 +17,11 @@ further reading/links:
 github: 
     piettoon_koud > master 
 dependencies: 
-    import math; 
+    import math;
+DONE:
+    
+TODO:
+    wip wildcard (google for python wildcard)
 '''
 
 import math
@@ -53,3 +57,13 @@ print(combined_dict)
 #-----topic------------use of *args and **kwargs in functions-------------------------top-----------
 #see functions_user_defined.py for more details
 #-----topic------------use of *args and **kwargs in functions----------------------bottom-----------
+
+
+
+#-----topic------------use of * as wildcard-------------------------------------------top-----------
+# from math import *
+#wildcard search in lists
+#wildcard search in strings
+#its use in regex (regular expressions)
+#its use as wildcard with ?
+#-----topic------------use of * as wildcard----------------------------------------bottom-----------
