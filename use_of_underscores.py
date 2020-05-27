@@ -2,7 +2,7 @@
 topics: 
     as an anonymous variable in loops; 
     in dunder methods;
-    ; 
+    in snake_case naming of identifiers; 
 reference1: 
     "write python code with one extra character"
     Dorel Masasa in: The Startup (Medium archive)
@@ -40,5 +40,6 @@ for _ in range(4):
 
 
 
-#-----topic------------use of *args and **kwargs in functions-------------------------top-----------
+#-----topic------------use of _ in snake_case naming----------------------------------top-----------
+# snake_case (usr_first_name) compared to camelCase (useFirst_name) to name identifiers
 #-----topic------------use of *args and **kwargs in functions----------------------bottom-----------
