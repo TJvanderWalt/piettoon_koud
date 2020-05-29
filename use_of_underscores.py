@@ -41,5 +41,5 @@ for _ in range(4):
 
 
 #-----topic------------use of _ in snake_case naming----------------------------------top-----------
-# snake_case (usr_first_name) compared to camelCase (useFirst_name) to name identifiers
+# snake_case (usr_first_name) compared to camelCase (usrFirstName) to name identifiers
 #-----topic------------use of *args and **kwargs in functions----------------------bottom-----------
