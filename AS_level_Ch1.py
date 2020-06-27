@@ -1,5 +1,7 @@
 '''This module accompanies Cambridge International AS and A Level Computer Science Coursebook
-by Sylvia Langfield and Dave Duddell'''
+    by Sylvia Langfield and Dave Duddell.
+
+    Functions written by Philip Mathee (matheephilip@gmail.com) and Tjaart Van Der Walt (tutorTjaart@gmail.com)'''
 
 def bin_to_den(binary_code):
     '''takes as arg a whole byte(s) of binary code (i.e. a list of '0's and '1's as
@@ -240,7 +242,7 @@ def sum_of_ints(int_1, int_2):
 #print(den_to_twos(den_num))
 
 #uncomment the two lines below to run bin_to_two() as a script
-#bin_List = [0,0,1,1,0,1,0,0]
+#bin_List = [1,0,0,1,0,1,0,1]
 #twos_Bin = bin_to_two(bin_List)
 #print(twos_Bin)
 
