@@ -35,7 +35,6 @@ print("We welcome you as a student in computer science")
 
 
 
-
 symb=input("Enter a symbol")
 num=int(input("Enter an odd number, being the number of symbols in the base of the pyramid"))
 symbstr=symb * num
@@ -62,3 +61,36 @@ while num_leading_spaces > 0:
     print(' ' * num_leading_spaces + symb + ' ' * num_middle_spaces + symb)
     num_leading_spaces-=1
 print(symb * num)
+
+
+#Task 14.01  
+
+def InputMaxNumberOfSymbols():
+    global MaxNumberOfSymbols
+    MaxNumberOfSymbols = 0
+    while MaxNumberOfSymbols % 2 == 0:
+        MaxNumberOfSymbols = int(input("Enter number of symbols: "))
+
+def SetValues():
+    global symbol, MaxNumberOfSymbols, NumberOfSpaces, NumberOfSymbols
+    symbol = input("Enter a symbol: ")
+    InputMaxNumberOfSymbols()
+    NumberOfSpaces = int(((MaxNumberOfSymbols - 1) / 2) + 1)
+    NumberOfSymbols =  1
+
+def OutputSpacesAndSymbols():
+    global NumberOfSpaces
+    print(' ' * (NumberOfSpaces - len(str(symbol))) +  str(symbol * NumberOfSymbols))
+
+def AdjustValueForNextRow():
+    global NumberOfSpaces, NumberOfSymbols
+    NumberOfSpaces -= 1
+    NumberOfSymbols += 2
+    
+def main():
+    SetValues()
+    while NumberOfSymbols <= MaxNumberOfSymbols:
+        OutputSpacesAndSymbols()
+        AdjustValueForNextRow()
+
+main()
