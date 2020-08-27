@@ -11,10 +11,54 @@ topics:
     sort() and sorted() 
     type()
 currying;
-reference1: 
+reference1:
+    'Python built-in functions' (with example code) 
+    https://www.programiz.com/python-programming/methods/built-in
+reference2:
+    "Built-in functions" https://docs.python.org/3/library/functions.html
 further reading/links: 
 github: piettoon_koud > master 
 dependencies:
+DONE:
+    math functions (7):
+        abs()
+        divmod()
+        max()
+        min()
+        pow()
+        round()     round(-15.5555, 2) #prints -15.56 (i.e. 2 digits after the decimal points)
+        sum()
+    type conversion functions (13):
+        ascii()
+        bin()
+        bool()
+        chr()       chr(68) #prints 'D'
+        complex()
+        float()     float('75.43') #prints 75.43
+        hex()
+        int()       int(-15.8) #truncates to -15
+                    int('5') #prints 5
+        oct()
+        ord()       ord('D') #prints 68
+        repr()
+        str()
+        type()
+TO DO:
+    iterable and iterator functions (13):
+        all()
+        any()
+        enumerate()
+        filter()
+        iter()
+        len()   len("Peter") #prints 5
+        map()
+        next()
+        range()
+        reversed()
+        slice()
+        sorted()
+        zip()
+
 """
 
 #-----topic------------any()-------------------------------------------------------------top--------
@@ -62,7 +106,10 @@ print(cubes, "\n")
 #-----topic------------filter()-------------------------------------------------------bottom--------
 
 
+#-----topic------------formatted output--------------------------------------------------top--------
+print("N1:{0:>10}|N2:{1:^10}|N3:{2:<10}|${3:.2f}".format(N1,Q,N,Price))
 
+#-----topic------------formatted output-----------------------------------------------bottom--------
 
 
 

@@ -13,6 +13,8 @@ reference2:
     Yong Cui in: Better Programming (Medium archive)
 reference3: 
     "Defining your own Python function" John Sturtz (realpython.com)
+reference4:
+    https://treyhunner.com/2018/04/keyword-arguments-in-python/
 so what? 
     way to abstract functionality into a function definition; 
     DRY principle; 
@@ -28,6 +30,12 @@ github:
     piettoon_koud > master 
 dependencies:
     none
+DONE:
+    ref1
+    ref2
+TODO:
+    ref3
+    ref4
 """
 
 #-----topic------------regular functions (with default arguments)---------------------top-----------
@@ -40,7 +48,7 @@ def add_up(num_1, num_2):          #declare function with def keyword
 first_number = int(input("Enter a first number: "))
 second_number = int(input("Enter a second number: "))
 two_numbers_summed = add_up(first_number, second_number) 
-#order and number of args in the call should match order and number in the def
+#order and number of positional args in the call should match order and number in the def
 #call function and assign the return value
 print(f"Sum of {first_number} and {second_number} is {two_numbers_summed}\n")
 
@@ -49,7 +57,18 @@ def my_func(qty=6, item='bananas', price=2.49):
 #when both positional and keyword args are present, all the positional args must come first
     '''default values for keyword arguments'''
     print(f"{qty} {item} cost R{price}\n")
-my_func(item='oranges') #kwargs not specified in the call, take on their default values from def
+my_func(item ='oranges') #kwargs not specified in the call, take on their default values from def
+
+def basic_operators(a,b):
+    sum = a + b
+    difference = a - b
+    product = a * b
+    return sum, difference, product #returning multiple results
+add, subtract, multiply = basic_operators(3, b = 4) 
+#function called by a mix of positional and keyword args
+#assigning multiple results to multiple variables
+print(f"plus = {add} , minus = {subtract}, times = {multiply}\n")
+print(help(basic_operators), "\n")
 
 #-----topic------------regular functions (with default arguments)---------------------bottom--------
 

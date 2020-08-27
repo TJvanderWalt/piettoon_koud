@@ -45,25 +45,29 @@ def calculate():
 window = Tk() #windows are the containers (parent) in which all other widgets (GUI elements) live
 #window (i.e. name of the parent) often becomes the first parameter when creating other widgets
 #example:   label1 = Label(window, text="Menu")
-window.geometry("700x500") #height x width
+window.geometry("700x500-50+40") 
+#"widthxheight+x+y" with width, height in pixels and +x or -x the horizontal distance 
+# from the screens's left or right edge, and +y or -y the vertical distance from screen's
+# top or bottom edge 
 #-----topic------------window/class instance of Tk---------------------------------------bottom-----
 
 
 
 #-----topic------------label ---------------------------------------------------------------top-----
 label1 = Label(
+    window,
     text="Menu",
     font="times 28 bold",
     foreground="white", # Set the text color
     bg="red",    # "orange" "yellow" "green" "blue" "purple" "black" or hexadecimal RGB values
-    width=10,
-    height=10
+    width=20,
+    height=4
 )
-label1.place(x=550, y=70)
+label1.place(x=250, y=70)
 #refer reference1 for a list of valid colors and tools to get hexadecimal color codes
 #fg and bg can be used as shorthand for foreground and background
 #-----topic------------label ------------------------------------------------------------bottom-----
-
+'''
 
 
 #-----topic------------Entry ---------------------------------------------------------------top-----
@@ -113,7 +117,7 @@ b1 = Button(
 b1.place(x=550, y=120)
 #-----topic------------Button -----------------------------------------------------------bottom-----
 
-
+'''
 
 #-----topic------------mainloop() --------------------------------------------------------top-----
 window.mainloop() #runs the Tkinter event loop (listening for events) until this window is closed
